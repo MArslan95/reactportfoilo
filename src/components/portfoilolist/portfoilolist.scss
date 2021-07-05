@@ -1,0 +1,12 @@
+@import "./../../global.scss";
+.portfoilolist {
+  font-size: 1.2rem;
+  margin-right: 3rem;
+  padding: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  &.active {
+    background-color: $secondaryColor;
+    color: #fff;
+  }
+}
