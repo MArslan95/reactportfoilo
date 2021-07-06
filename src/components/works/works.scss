@@ -1,3 +1,4 @@
+@import "./../../global.scss";
 .works {
   background: crimson;
   display: flex;
@@ -16,6 +17,24 @@
     &.right {
       right: 100px;
     }
+    @include mobile {
+      height: 20px;
+      &.left {
+        left: 260px;
+        transform: rotateY(180deg);
+        background: $secondaryColor;
+        border-radius: 50%;
+        padding: 0.75rem;
+        margin-top: 12rem;
+      }
+      &.right {
+        right: 0px;
+        background: $secondaryColor;
+        border-radius: 50%;
+        padding: 0.75rem;
+        margin-top: 12rem;
+      }
+    }
   }
 
   .slider {
@@ -24,6 +43,12 @@
     position: absolute;
     left: 0;
     transition: all 1s ease-out;
+    @include mobile {
+      height: auto;
+      display: flex;
+      transition: all 1s ease-out;
+      overflow: hidden;
+    }
   }
   .container {
     width: 100vw;
@@ -38,6 +63,15 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include mobile {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       .left {
         flex: 4;
@@ -45,6 +79,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @include mobile {
+          flex: 5;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
         // background: lightgreen;
         .leftcontainer {
           width: 90%;
@@ -52,22 +94,34 @@
           display: flex;
           flex-direction: column;
           justify-content: space-between;
+          @include mobile {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
 
           .imgcontainer {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             background: rgb(245, 179, 155);
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-left: 0.5rem;
 
             img {
-              width: 2rem;
+              width: 3rem;
+              object-fit: cover;
             }
 
             p {
               font-size: 1rem;
+              @include mobile {
+                font-size: 0.86rem;
+              }
             }
           }
           span {
@@ -87,10 +141,20 @@
         justify-content: center;
         overflow: hidden;
         // background: yellow;
+        @include mobile {
+          flex: 7;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
 
         img {
           width: 400px;
           transform: rotate(-10deg);
+          @include mobile {
+            width: 300px;
+          }
         }
       }
     }
